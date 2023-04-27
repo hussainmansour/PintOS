@@ -1,0 +1,131 @@
+TOTAL TESTING SCORE: 94.6%
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+SUMMARY BY TEST SET
+
+Test Set                                      Pts Max  % Ttl  % Max
+--------------------------------------------- --- --- ------ ------
+tests/threads/Rubric.alarm                     18/ 18  20.0%/ 20.0%
+tests/threads/Rubric.priority                  38/ 38  40.0%/ 40.0%
+tests/threads/Rubric.mlfqs                     32/ 37  34.6%/ 40.0%
+--------------------------------------------- --- --- ------ ------
+Total                                                  94.6%/100.0%
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+SUMMARY OF INDIVIDUAL TESTS
+
+Functionality and robustness of alarm clock (tests/threads/Rubric.alarm):
+	     4/ 4 tests/threads/alarm-single
+	     4/ 4 tests/threads/alarm-multiple
+	     4/ 4 tests/threads/alarm-simultaneous
+	     4/ 4 tests/threads/alarm-priority
+
+	     1/ 1 tests/threads/alarm-zero
+	     1/ 1 tests/threads/alarm-negative
+
+	- Section summary.
+	      6/  6 tests passed
+	     18/ 18 points subtotal
+
+Functionality of priority scheduler (tests/threads/Rubric.priority):
+	     3/ 3 tests/threads/priority-change
+	     3/ 3 tests/threads/priority-preempt
+
+	     3/ 3 tests/threads/priority-fifo
+	     3/ 3 tests/threads/priority-sema
+	     3/ 3 tests/threads/priority-condvar
+
+	     3/ 3 tests/threads/priority-donate-one
+	     3/ 3 tests/threads/priority-donate-multiple
+	     3/ 3 tests/threads/priority-donate-multiple2
+	     3/ 3 tests/threads/priority-donate-nest
+	     5/ 5 tests/threads/priority-donate-chain
+	     3/ 3 tests/threads/priority-donate-sema
+	     3/ 3 tests/threads/priority-donate-lower
+
+	- Section summary.
+	     12/ 12 tests passed
+	     38/ 38 points subtotal
+
+Functionality of advanced scheduler (tests/threads/Rubric.mlfqs):
+	     5/ 5 tests/threads/mlfqs-load-1
+	     5/ 5 tests/threads/mlfqs-load-60
+	     3/ 3 tests/threads/mlfqs-load-avg
+
+	     5/ 5 tests/threads/mlfqs-recent-1
+
+	     5/ 5 tests/threads/mlfqs-fair-2
+	     3/ 3 tests/threads/mlfqs-fair-20
+
+	     4/ 4 tests/threads/mlfqs-nice-2
+	     2/ 2 tests/threads/mlfqs-nice-10
+
+	  ** 0/ 5 tests/threads/mlfqs-block
+
+	- Section summary.
+	      8/  9 tests passed
+	     32/ 37 points subtotal
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+DETAILS OF tests/threads/mlfqs-block FAILURE:
+
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (mlfqs-block) begin
+  (mlfqs-block) Main thread acquiring lock.
+  (mlfqs-block) Main thread creating block thread, sleeping 25 seconds...
+  (mlfqs-block) Block thread spinning for 20 seconds...
+  (mlfqs-block) Block thread acquiring lock...
+  (mlfqs-block) Main thread spinning for 5 seconds...
+  (mlfqs-block) Main thread releasing lock.
+  (mlfqs-block) ...got it.
+  (mlfqs-block) Block thread should have already acquired lock.
+  (mlfqs-block) end
+Differences in `diff -u' format:
+  (mlfqs-block) begin
+  (mlfqs-block) Main thread acquiring lock.
+  (mlfqs-block) Main thread creating block thread, sleeping 25 seconds...
+  (mlfqs-block) Block thread spinning for 20 seconds...
+  (mlfqs-block) Block thread acquiring lock...
+  (mlfqs-block) Main thread spinning for 5 seconds...
+  (mlfqs-block) Main thread releasing lock.
+- (mlfqs-block) ...got it.
+- (mlfqs-block) Block thread should have already acquired lock.
++ (mlfqs-block) (mlfqs-block) Block thread should have already acquired lock.
+  (mlfqs-block) end
+
+OUTPUT FROM tests/threads/mlfqs-block:
+
+qemu -device isa-debug-exit -drive file=/tmp/cCFQnJONmE.dsk,format=raw,index=0,media=disk -m 4 -net none -nographic -monitor null
+c[?7l[2J[0mSeaBIOS (version rel-1.16.2-0-gea1b7a073390-prebuilt.qemu.org)
+Booting from Hard Disk...
+PPiiLLoo  hhddaa1
+1
+LLooaaddiinngg.......................
+Kernel command line: -q -mlfqs run mlfqs-block
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  816,742,400 loops/s.
+Boot complete.
+Executing 'mlfqs-block':
+(mlfqs-block) begin
+(mlfqs-block) Main thread acquiring lock.
+(mlfqs-block) Main thread creating block thread, sleeping 25 seconds...
+(mlfqs-block) Block thread spinning for 20 seconds...
+(mlfqs-block) Block thread acquiring lock...
+(mlfqs-block) Main thread spinning for 5 seconds...
+(mlfqs-block) Main thread releasing lock.
+(mlfqs-block) (mlfqs-block) Block thread should have already acquired lock.
+(mlfqs-block) end
+Execution of 'mlfqs-block' complete.
+Timer: 3028 ticks
+Thread: 500 idle ticks, 2528 kernel ticks, 0 user ticks
+Console: 768 characters output
+Keyboard: 0 keys pressed
+Powering off...
