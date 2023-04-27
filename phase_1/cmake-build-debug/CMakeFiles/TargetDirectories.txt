@@ -1,0 +1,3 @@
+/home/hussein/pintos/CSEx61-pintos/cmake-build-debug/CMakeFiles/CSEx61_pintos.dir
+/home/hussein/pintos/CSEx61-pintos/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/hussein/pintos/CSEx61-pintos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
