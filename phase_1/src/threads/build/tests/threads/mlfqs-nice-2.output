@@ -1,0 +1,26 @@
+qemu -device isa-debug-exit -drive file=/tmp/WthqMAW4DJ.dsk,format=raw,index=0,media=disk -m 4 -net none -nographic -monitor null
+c[?7l[2J[0mSeaBIOS (version rel-1.16.2-0-gea1b7a073390-prebuilt.qemu.org)
+Booting from Hard Disk...
+PPiiLLoo  hhddaa1
+1
+LLooaaddiinngg.......................
+Kernel command line: -q -mlfqs run mlfqs-nice-2
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  785,612,800 loops/s.
+Boot complete.
+Executing 'mlfqs-nice-2':
+(mlfqs-nice-2) begin
+(mlfqs-nice-2) Starting 2 threads...
+(mlfqs-nice-2) Starting threads took 0 ticks.
+(mlfqs-nice-2) Sleeping 40 seconds to let threads run, please wait...
+(mlfqs-nice-2) Thread 0 received 1924 ticks.
+(mlfqs-nice-2) Thread 1 received 1077 ticks.
+(mlfqs-nice-2) end
+Execution of 'mlfqs-nice-2' complete.
+Timer: 4025 ticks
+Thread: 1000 idle ticks, 3025 kernel ticks, 0 user ticks
+Console: 634 characters output
+Keyboard: 0 keys pressed
+Powering off...
